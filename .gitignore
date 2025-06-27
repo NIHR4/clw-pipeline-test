@@ -1,0 +1,16 @@
+# Binary files
+*.app
+*.dct
+*.bct
+*.shp
+*.bpp
+*.exp
+# Build directories
+map/
+obj/
+out/
+
+# Redundant text files
+*.clw
+*.inc
+*.txa

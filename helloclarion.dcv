@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dictionary Name="tmphelloclarion" Version="1" StructureChecked="1" DctxFormat="4">
+	<DictionaryVersion Version="1" Description="Initial version"/>
+	<Table Guid="{9a2cb33e-c046-4bd1-829d-8de0706e7279}" Name="Users" Prefix="Use" Driver="TOPSPEED" Create="true" Thread="true">
+		<Audit CreateUser="Administrator" CreateDate="27 JUN 2025" CreateTime="10:55:15AM" CreateVersionNumber="1" ModifiedUser="Administrator" ModifiedDate="27 JUN 2025" ModifiedTime="10:55:52AM" ModifiedVersionNumber="1"/>
+		<Field Guid="{e7b06db0-f70a-40e1-bd8b-26eb391c6d49}" Name="FirstName" DataType="STRING" Size="50" ScreenPicture="@s50" ScreenPrompt="First Name:" ReportHeading="First Name" ReportControl=" STRING(@s50),USE(Use:FirstName)">
+			<WindowControl>
+				<Line Text=" PROMPT(&apos;First Name:&apos;),USE(?Use:FirstName:Prompt)"/>
+				<Line Text=" ENTRY(@s50),USE(Use:FirstName)"/>
+			</WindowControl>
+			<Audit CreateUser="Administrator" CreateDate="27 JUN 2025" CreateTime="10:55:27AM" CreateVersionNumber="1" ModifiedUser="Administrator" ModifiedDate="27 JUN 2025" ModifiedTime="10:55:27AM" ModifiedVersionNumber="1"/>
+			<Validity Check="NOCHECKS"/>
+		</Field>
+		<Field Guid="{067a1d61-9929-4919-a8dd-ecd73382362b}" Name="LastName" DataType="STRING" Size="50" ScreenPicture="@s50" ScreenPrompt="Last Name:" ReportHeading="Last Name" ReportControl=" STRING(@s50),USE(Use:LastName)">
+			<WindowControl>
+				<Line Text=" PROMPT(&apos;Last Name:&apos;),USE(?Use:LastName:Prompt)"/>
+				<Line Text=" ENTRY(@s50),USE(Use:LastName)"/>
+			</WindowControl>
+			<Audit CreateUser="Administrator" CreateDate="27 JUN 2025" CreateTime="10:55:42AM" CreateVersionNumber="1" ModifiedUser="Administrator" ModifiedDate="27 JUN 2025" ModifiedTime="10:55:42AM" ModifiedVersionNumber="1"/>
+			<Validity Check="NOCHECKS"/>
+		</Field>
+		<Field Guid="{6b6c6f16-6142-447b-879e-33d4dbf97cca}" Name="FavoriteColor" DataType="STRING" Size="20" ScreenPicture="@s20" ScreenPrompt="Favorite Color:" ReportHeading="Favorite Color" ReportControl=" STRING(@s20),USE(Use:FavoriteColor)">
+			<WindowControl>
+				<Line Text=" PROMPT(&apos;Favorite Color:&apos;),USE(?Use:FavoriteColor:Prompt)"/>
+				<Line Text=" ENTRY(@s20),USE(Use:FavoriteColor)"/>
+			</WindowControl>
+			<Audit CreateUser="Administrator" CreateDate="27 JUN 2025" CreateTime="10:55:42AM" CreateVersionNumber="1" ModifiedUser="Administrator" ModifiedDate="27 JUN 2025" ModifiedTime="10:55:52AM" ModifiedVersionNumber="1"/>
+			<Validity Check="NOCHECKS"/>
+		</Field>
+	</Table>
+</Dictionary>
+
