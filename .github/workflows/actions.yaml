@@ -8,6 +8,10 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
+      - name: Show GITHUB_WORKSPACE (CMD)
+        shell: cmd
+        run: echo GITHUB_WORKSPACE is %GITHUB_WORKSPACE%
+
       - name: Run Clarion build script
         shell: cmd
         run: call C:\actions-runner\tools\build.bat"
