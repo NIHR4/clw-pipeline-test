@@ -1,0 +1,11 @@
+name: Clarion Actions
+
+on: 
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - run: call %GITHUB_WORKSPACE%\action-runner\tools\build.bat"
