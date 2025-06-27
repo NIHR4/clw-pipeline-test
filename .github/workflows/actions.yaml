@@ -2,7 +2,7 @@ name: Clarion Actions
 
 on: 
   push:
-    branches: [main]
+    branches: [master]
 jobs:
   build:
     runs-on: self-hosted
