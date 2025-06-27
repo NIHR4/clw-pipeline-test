@@ -10,4 +10,4 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run Clarion build script
         shell: cmd
-        run: call "%GITHUB_WORKSPACE%\action-runner\tools\build.bat"
+        run: call C:\actions-runner\tools\build.bat"
