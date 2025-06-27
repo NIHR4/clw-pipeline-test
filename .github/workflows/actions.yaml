@@ -12,6 +12,16 @@ jobs:
         shell: cmd
         run: echo GITHUB_WORKSPACE is %GITHUB_WORKSPACE%
 
-      - name: Run Clarion build script
+      - name: Make Clarion APPs
+        shell: cmd
+        run: call C:\actions-runner\tools\make.bat"
+
+      - name: Build solution
         shell: cmd
         run: call C:\actions-runner\tools\build.bat"
+    
+      - name: Upload final Clarion artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: clarion-build
+          path: \out\
