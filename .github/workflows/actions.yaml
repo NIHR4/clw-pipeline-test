@@ -11,7 +11,7 @@ jobs:
         uses: peter-evans/repository-dispatch@v3
         with:
           event-type: build_event
-          token: ${{ secretes.PAT }}
+          token: ${{ secrets.PAT }}
           repository: nihr4/cpp-submodule-test
 
       - name: Checkout repository
