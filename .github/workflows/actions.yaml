@@ -3,19 +3,36 @@ name: Clarion Actions
 on: 
   push:
     branches: [master]
+    paths-ignore:
+      - '.github/workflows/**'
+  workflow-dispatch:
 jobs:
+  
+  build-cpp:
+    uses: nihr4/cpp-submodule-test/.github/workflows/build.yml@master
+    secrets:
+      PAT: ${{ secrets.PAT }}
+  
   build:
     runs-on: self-hosted
+    needs: build-cpp
     steps:
-      - name: Build C++ Dependency
-        uses: peter-evans/repository-dispatch@v3
-        with:
-          event-type: build_event
-          token: ${{ secrets.PAT }}
-          repository: nihr4/cpp-submodule-test
-
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Download C++ artifact
+        uses: actions/download-artifact@v4
+        with:
+            name: cpp-artifact
+            path: deps/bin/cpp
+      
+      - name: Convert C++ libraries and copy to build folder
+        shell: cmd
+        run: |
+          mkdir %GITHUB_WORKSPACE%\out
+          xcopy deps\bin\cpp\*.dll %GITHUB_WORKSPACE%\out\
+          C:\actions-runner\tools\libmaker\MGLibMkrMinus.exe %GITHUB_WORKSPACE%\deps\bin\cpp\HelloClarionCpp.dll %GITHUB_WORKSPACE%\HelloClarionCpp.lib
+
 
       - name: Make Clarion APPs
         shell: cmd
