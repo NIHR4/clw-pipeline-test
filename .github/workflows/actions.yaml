@@ -9,7 +9,7 @@ on:
 jobs:
   
   build-cpp:
-    uses: nihr4/cpp-submodule-test/.github/workflows/build.yml@master
+    uses: nihr4/cpp-submodule-test/.github/workflows/remote.yaml@master
     secrets:
       PAT: ${{ secrets.PAT }}
   
