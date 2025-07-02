@@ -12,6 +12,9 @@ jobs:
     uses: nihr4/cpp-submodule-test/.github/workflows/remote.yaml@master
     secrets:
       PAT: ${{ secrets.PAT }}
+    with:
+      repo: nihr4/cpp-submodule-test
+      ref: master
   
   build:
     runs-on: self-hosted
