@@ -34,7 +34,7 @@ jobs:
         run: |
           mkdir %GITHUB_WORKSPACE%\out
           xcopy deps\bin\cpp\*.dll %GITHUB_WORKSPACE%\out\
-          C:\actions-runner\tools\libmaker\MGLibMkrMinus.exe %GITHUB_WORKSPACE%\deps\bin\cpp\HelloClarionCpp.dll %GITHUB_WORKSPACE%\HelloClarionCpp.lib /CLOSE
+          C:\actions-runner\tools\libmaker\MGLibMkrMinus.exe READ=%GITHUB_WORKSPACE%\deps\bin\cpp\HelloClarionCpp.dll WRITE="%GITHUB_WORKSPACE%\HelloClarionCpp.lib" /CLOSE
 
 
       - name: Make Clarion APPs
