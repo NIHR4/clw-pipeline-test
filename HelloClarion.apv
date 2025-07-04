@@ -26,10 +26,7 @@ WHEN  ('INIManager') ('')
 WHEN  ('RelationManager:Users') ('')
 WHEN  ('Translator') ('')
 
-%ClassLines DEPEND %ClassItem MULTI DEFAULT TIMES 2
-WHEN  ('FileManager:Users') ('Init {19}PROCEDURE(),DERIVED', 'Kill {19}PROCEDURE(),DERIVED', |
-  'UseFile {16}PROCEDURE(BYTE UseType = UseType:Uses),BYTE,PROC,DERIVED')
-WHEN  ('RelationManager:Users') ('Init {19}PROCEDURE', 'Kill {19}PROCEDURE(),DERIVED')
+%ClassLines DEPEND %ClassItem MULTI DEFAULT TIMES 0
 
 %ProgramAuthor DEFAULT  ('')
 %ProgramIcon DEFAULT  ('')
@@ -481,15 +478,11 @@ WHEN  ('HelloClarion001.clw') ('1')
 %LastApplicationDebug DEFAULT  ('')
 %LastApplicationLocalLibrary DEFAULT  ('')
 [PROJECT]
+-- OUTPUTPATH C:\CODIGO\clw-pipeline-test\out
 #system win32 exe
 #model clarion dll
-#pragma define(_ABCDllMode_=>0) -- GENERATED
-#pragma define(_ABCLinkMode_=>1) -- GENERATED
 #compile "HelloClarion.clw" -- GENERATED
 #compile "HelloClarion001.clw" -- GENERATED
-#compile "HelloClarion_BC0.CLW" -- GENERATED
-#compile "HELLOCLARION_BC.CLW" -- GENERATED
-#pragma link("C%V%tps%X%%L%.lib") -- GENERATED
 #link "HelloClarion.EXE"
 [PROGRAM]
 [COMMON]
@@ -517,7 +510,7 @@ NAME Main
 [COMMON]
 DESCRIPTION 'Wizard Application for C:\Users\andre\Coding\Work\HelloClarion\helloclarion.dct'
 FROM ABC Frame
-MODIFIED '2025/07/04' ' 9:37:19'
+MODIFIED '2025/07/04' '10:17:15'
 [PROMPTS]
 %ButtonAction DEPEND %Control DEFAULT TIMES 14
 WHEN  ('') ('No Special Action')
@@ -606,8 +599,12 @@ WHEN  ('Default') ('')
 WHEN  ('WindowToolbar') ('')
 
 %ClassLines DEPEND %ClassItem MULTI DEFAULT TIMES 1
-WHEN  ('Default') ('Init {19}PROCEDURE(),BYTE,PROC,DERIVED', 'Kill {19}PROCEDURE(),BYTE,PROC,DERIVED', |
-  'TakeAccepted {11}PROCEDURE(),BYTE,PROC,DERIVED')
+WHEN  ('Default') ('Ask {20}PROCEDURE(),DERIVED', 'ChangeAction {11}PROCEDURE(),BYTE,DERIVED', |
+  'OnCloseEventCancelled  PROCEDURE(),DERIVED', 'PrimeUpdate {12}PROCEDURE(),BYTE,PROC,DERIVED', |
+  'Reset {18}PROCEDURE(BYTE Force=0),DERIVED', 'Run {20}PROCEDURE(),BYTE,PROC,DERIVED', |
+  'SetAlerts {14}PROCEDURE(),DERIVED', 'TakeAccepted {11}PROCEDURE(),BYTE,PROC,DERIVED', |
+  'TakeDisableButton      PROCEDURE(SIGNED Control,BYTE MakeDisable),DERIVED', 'TakeEvent {14}PROCEDURE(),BYTE,PROC,DERIVED', |
+  'Update {17}PROCEDURE(),DERIVED')
 
 %ReturnValue FIELD  ()
 %ProcedureOneInstance LONG  (0)
@@ -974,6 +971,7 @@ PROPERTY:BEGIN
 PRIORITY 5000
 PROPERTY:END
  Hello()
+ MESSAGE('Hola desde clarion')
 [END]
 [END]
 [END]
